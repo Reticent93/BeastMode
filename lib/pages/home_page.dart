@@ -30,15 +30,39 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      body: SizedBox(
-        height: double.infinity,
-        child: Container(
-          color: Colors.blue,
-          child: Image.asset(
-            'assets/images/gym-landing.jpg',
-            fit: BoxFit.cover,
+      drawer: Drawer(),
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Colors.blueAccent,
+      ),
+      body: Stack(
+        children: <Widget>[
+          SizedBox(
+            height: double.infinity,
+            child: Image.asset(
+              'assets/images/gym-landing.jpg',
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
+          Center(
+            widthFactor: double.infinity,
+            child: Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text('Sign Up'),
+                ),
+                SizedBox(
+                  width: 50,
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text('Sign Up'),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
