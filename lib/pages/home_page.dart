@@ -44,13 +44,25 @@ class _MyHomePageState extends State<MyHomePage> {
               fit: BoxFit.cover,
             ),
           ),
-          Center(
-            widthFactor: double.infinity,
+          Positioned(
+            bottom: 80,
+            left: 40,
             child: Row(
               children: [
                 ElevatedButton(
                   onPressed: () {},
-                  child: Text('Sign Up'),
+                  child: Text('Sign In'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    foregroundColor: Colors.white,
+                    textStyle: TextStyle(fontSize: 16),
+                    elevation: 10,
+                    shadowColor: Colors.white,
+                    fixedSize: Size(140, 60),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                  ),
                 ),
                 SizedBox(
                   width: 50,
@@ -58,6 +70,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {},
                   child: Text('Sign Up'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    foregroundColor: Colors.white,
+                    textStyle: TextStyle(fontSize: 16),
+                    elevation: 10,
+                    shadowColor: Colors.white,
+                    fixedSize: Size(140, 60),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                  ),
                 ),
               ],
             ),
