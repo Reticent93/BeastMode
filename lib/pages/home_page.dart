@@ -30,11 +30,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      drawer: Drawer(),
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: Colors.blueAccent,
-      ),
       body: Stack(
         children: <Widget>[
           SizedBox(
@@ -45,44 +40,92 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Positioned(
+            top: 80,
+            left: 40,
+            child: Image.asset('assets/images/KingB.png'),
+          ),
+          Positioned(
             bottom: 80,
             left: 40,
-            child: Row(
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Sign In'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    textStyle: TextStyle(fontSize: 16),
-                    elevation: 10,
-                    shadowColor: Colors.white,
-                    fixedSize: Size(140, 60),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Get Fit",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const Text(
+                    'Get Strong',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const Text(
+                    'Beast Mode!',
+                    style: TextStyle(
+                        color: Color.fromRGBO(92, 90, 232, 1),
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Container(
+                    width: 300,
+                    padding: EdgeInsets.only(top: 10),
+                    child: Text(
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                      'Morbi malesuada, mi non volutpat fermentum, felis nulla congue felis.',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                   ),
-                ),
-                SizedBox(
-                  width: 50,
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Sign Up'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    textStyle: TextStyle(fontSize: 16),
-                    elevation: 10,
-                    shadowColor: Colors.white,
-                    fixedSize: Size(140, 60),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
-                    ),
+                  const SizedBox(
+                    height: 50,
                   ),
-                ),
-              ],
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('Sign In'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color.fromRGBO(92, 90, 232, 1),
+                          foregroundColor: Colors.white,
+                          textStyle: const TextStyle(fontSize: 16),
+                          elevation: 10,
+                          shadowColor: Colors.white,
+                          fixedSize: const Size(140, 55),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 30,
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('Sign Up'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          foregroundColor: Color.fromRGBO(92, 90, 232, 1),
+                          textStyle: const TextStyle(fontSize: 16),
+                          elevation: 10,
+                          shadowColor: Colors.white,
+                          fixedSize: const Size(140, 55),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           )
         ],
