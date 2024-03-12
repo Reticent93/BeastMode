@@ -1,4 +1,5 @@
 import 'package:doodle/pages/home_page.dart';
+import 'package:doodle/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,11 +32,10 @@ class MyApp extends StatelessWidget {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
+        scaffoldBackgroundColor: Color.fromRGBO(206, 206, 206, 1),
         useMaterial3: true,
       ),
-      home: const MyHomePage(
-        title: "Beast Mode",
-      ),
+      home: const SignUp(),
     );
   }
 }
