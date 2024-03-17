@@ -1,9 +1,11 @@
+import 'package:doodle/pages/login_page.dart';
+import 'package:doodle/pages/signup_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -13,8 +15,6 @@ class MyHomePage extends StatefulWidget {
   // case the title) provided by the parent (in this case the App widget) and
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
-
-  final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -90,7 +90,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (e) => MyLogin()),
+                          );
+                        },
                         child: const Text('Sign In'),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color.fromRGBO(92, 90, 232, 1),
@@ -107,18 +112,25 @@ class _MyHomePageState extends State<MyHomePage> {
                       const SizedBox(
                         width: 30,
                       ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: const Text('Sign Up'),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black,
-                          foregroundColor: Color.fromRGBO(92, 90, 232, 1),
-                          textStyle: const TextStyle(fontSize: 16),
-                          elevation: 10,
-                          shadowColor: Colors.white,
-                          fixedSize: const Size(140, 55),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50),
+                      GestureDetector(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (e) => SignUp()),
+                            );
+                          },
+                          child: const Text('Sign Up'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black,
+                            foregroundColor: Color.fromRGBO(92, 90, 232, 1),
+                            textStyle: const TextStyle(fontSize: 16),
+                            elevation: 10,
+                            shadowColor: Colors.white,
+                            fixedSize: const Size(140, 55),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50),
+                            ),
                           ),
                         ),
                       ),

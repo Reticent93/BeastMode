@@ -1,19 +1,18 @@
-import 'package:doodle/pages/login_page.dart';
+import 'package:doodle/pages/signup_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({super.key});
+class MyLogin extends StatefulWidget {
+  const MyLogin({super.key});
 
   @override
-  State<SignUp> createState() => _SignUpState();
+  State<MyLogin> createState() => _MyLoginState();
 }
 
-class _SignUpState extends State<SignUp> {
-  final _formSignUpKey = GlobalKey<FormState>();
-  bool rememberPassword = true;
+class _MyLoginState extends State<MyLogin> {
+  final _formLoginKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -48,15 +47,13 @@ class _SignUpState extends State<SignUp> {
             child: Container(
               padding: const EdgeInsets.fromLTRB(25, 50, 25, 20),
               decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(40),
-                  topRight: Radius.circular(40),
-                ),
-              ),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    topRight: Radius.circular(40),
+                  )),
               child: SingleChildScrollView(
                 child: Form(
-                  key: _formSignUpKey,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
@@ -64,7 +61,7 @@ class _SignUpState extends State<SignUp> {
                       children: [
                         const Center(
                           child: Text(
-                            'Welcome Beast',
+                            'Welcome Back Beast',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 24,
@@ -76,11 +73,9 @@ class _SignUpState extends State<SignUp> {
                           height: 30,
                         ),
                         const Text(
-                          'Sign Up',
+                          'Sign In',
                           style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
+                              fontWeight: FontWeight.bold, fontSize: 18),
                         ),
                         const SizedBox(
                           height: 10,
@@ -97,10 +92,10 @@ class _SignUpState extends State<SignUp> {
                             hintText: 'Enter Email',
                             hintStyle: const TextStyle(color: Colors.black26),
                             border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
                               borderSide: const BorderSide(
                                 color: Colors.black12,
                               ),
-                              borderRadius: BorderRadius.circular(10),
                             ),
                             enabledBorder: const OutlineInputBorder(
                               borderSide: BorderSide(
@@ -123,7 +118,7 @@ class _SignUpState extends State<SignUp> {
                           },
                           decoration: InputDecoration(
                             label: const Text('Password'),
-                            hintText: 'Enter Password',
+                            hintText: 'Please enter Password',
                             hintStyle: const TextStyle(
                               color: Colors.black26,
                             ),
@@ -147,15 +142,16 @@ class _SignUpState extends State<SignUp> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             RichText(
-                              text: TextSpan(children: [
-                                const TextSpan(
-                                  text: 'Already a member? ',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                TextSpan(
-                                    text: 'Sign In',
+                              text: TextSpan(
+                                children: [
+                                  const TextSpan(
+                                    text: 'Not a member? ',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  TextSpan(
+                                    text: 'Sign Up',
                                     style: const TextStyle(
                                       color: Color.fromRGBO(92, 90, 232, 1),
                                       fontWeight: FontWeight.bold,
@@ -164,18 +160,18 @@ class _SignUpState extends State<SignUp> {
                                       ..onTap = () => Navigator.push(
                                             context,
                                             MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const MyLogin(),
-                                            ),
-                                          )),
-                              ]),
+                                                builder: (context) =>
+                                                    const SignUp()),
+                                          ),
+                                  ),
+                                ],
+                              ),
                             ),
                             const Text(
                               'Forgot Password?',
                               style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
@@ -189,23 +185,9 @@ class _SignUpState extends State<SignUp> {
                               backgroundColor:
                                   const Color.fromRGBO(92, 90, 232, 1),
                             ),
-                            onPressed: () {
-                              if (_formSignUpKey.currentState!.validate() &&
-                                  rememberPassword) {
-                                ScaffoldMessenger.of(context)
-                                    .showSnackBar(const SnackBar(
-                                  content: Text('Processing Data'),
-                                ));
-                              } else if (!rememberPassword) {
-                                ScaffoldMessenger.of(context)
-                                    .showSnackBar(const SnackBar(
-                                  content:
-                                      Text('Please agree to Terms of Service'),
-                                ));
-                              }
-                            },
+                            onPressed: () {},
                             child: const Text(
-                              'Sign Up',
+                              'Sign In',
                               style: TextStyle(color: Colors.white),
                             ),
                           ),
@@ -218,17 +200,15 @@ class _SignUpState extends State<SignUp> {
                           children: [
                             Expanded(
                               child: Divider(
-                                thickness: 0.8,
-                                color: Colors.grey.withOpacity(0.8),
+                                thickness: .8,
+                                color: Colors.grey.withOpacity(.8),
                               ),
                             ),
                             const Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 10),
+                              padding: EdgeInsets.symmetric(horizontal: 10.0),
                               child: Text(
-                                'Sign Up With',
-                                style: TextStyle(
-                                  color: Colors.black45,
-                                ),
+                                'Or Sign In With',
+                                style: TextStyle(color: Colors.black45),
                               ),
                             ),
                             Expanded(
@@ -239,14 +219,14 @@ class _SignUpState extends State<SignUp> {
                             ),
                           ],
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 25,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Brand(Brands.google),
-                            const Icon(
+                            Icon(
                               Icons.apple,
                               size: 42,
                             ),

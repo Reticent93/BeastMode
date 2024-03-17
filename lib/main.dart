@@ -1,5 +1,4 @@
 import 'package:doodle/pages/home_page.dart';
-import 'package:doodle/pages/signup_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,7 +34,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color.fromRGBO(206, 206, 206, 1),
         useMaterial3: true,
       ),
-      home: const SignUp(),
+      home: const MyHomePage(),
     );
   }
 }
