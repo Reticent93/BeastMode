@@ -13,6 +13,7 @@ class MyLogin extends StatefulWidget {
 
 class _MyLoginState extends State<MyLogin> {
   final _formLoginKey = GlobalKey<FormState>();
+  bool rememberPassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +55,7 @@ class _MyLoginState extends State<MyLogin> {
                   )),
               child: SingleChildScrollView(
                 child: Form(
+                  key: _formLoginKey,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
@@ -185,7 +187,15 @@ class _MyLoginState extends State<MyLogin> {
                               backgroundColor:
                                   const Color.fromRGBO(92, 90, 232, 1),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              if (_formLoginKey.currentState!.validate() &&
+                                  rememberPassword) {
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(
+                                  content: Text('Processing Data'),
+                                ));
+                              }
+                            },
                             child: const Text(
                               'Sign In',
                               style: TextStyle(color: Colors.white),
