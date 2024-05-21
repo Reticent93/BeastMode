@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Exercises extends StatelessWidget {
@@ -19,8 +20,58 @@ class Exercises extends StatelessWidget {
           },
         ),
       ),
-      body: Center(
-        child: Text('Exercises'),
+      body: Column(
+        children: [
+          Text(
+            'What are you focusing on today?',
+            style: TextStyle(
+              fontSize: 24,
+            ),
+          ),
+          Flexible(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                height: double.infinity,
+                width: double.infinity,
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 15,
+                  crossAxisSpacing: 10,
+                  children: [
+                    Image.asset(
+                      'assets/images/abs.jpg',
+                      fit: BoxFit.cover,
+                    ),
+                    Image.asset(
+                      'assets/images/arm.jpg',
+                      fit: BoxFit.cover,
+                    ),
+                    Image.asset(
+                      'assets/images/back.jpg',
+                      fit: BoxFit.cover,
+                    ),
+                    Image.asset(
+                      'assets/images/legs.jpg',
+                      fit: BoxFit.cover,
+                    ),
+                    Image.asset(
+                      'assets/images/glutes.jpg',
+                      fit: BoxFit.cover,
+                    ),
+                    Image.asset(
+                      'assets/images/full-body.jpg',
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

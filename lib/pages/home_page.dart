@@ -73,16 +73,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontSize: 30,
                         fontWeight: FontWeight.bold),
                   ),
-                  Container(
-                    width: 300,
-                    padding: EdgeInsets.only(top: 10),
-                    child: Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
-                      'Morbi malesuada, mi non volutpat fermentum, felis nulla congue felis.',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ),
                   const SizedBox(
                     height: 50,
                   ),
